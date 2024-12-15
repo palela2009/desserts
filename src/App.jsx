@@ -1,4 +1,4 @@
-import { AddToCart, DecrementQuantity, IncrementQuantity } from "./Icons";
+import { AddToCart, DecrementQuantity, IncrementQuantity, CarbonNeutral, EmptyCart } from "./Icons";
 import "./App.css";
 import React, { useState } from "react";
 import dessertProducts from "./data.json";
@@ -19,16 +19,15 @@ function App() {
   };
 
   const decrementQuantity = (dessert) => {
-    setCart((prevCart) => {
-      const updatedCart = { ...prevCart };
-      if (updatedCart[dessert.name]?.quantity > 1) {
-        updatedCart[dessert.name].quantity -= 1;
-      } else {
-        delete updatedCart[dessert.name];
-      }
-      return updatedCart;
-    });
-  };
+    const updatedCart = { ...cart }
+    if (updatedCart[dessert.name]?.quantity > 1) {
+      updatedCart[dessert.name].quantity -= 1
+    } else {
+      delete updatedCart[dessert.name]
+    }
+
+    setCart(updatedCart)
+  }
 
   const incrementQuantity = (dessert) => {
     setCart((prevCart) => ({
@@ -63,7 +62,7 @@ function App() {
                 <picture>
                   <source media="(max-width: 600px)" srcSet={BASE_URL + dessert.images.mobile} />
                   <source media="(min-width: 600px) and (max-width: 1199px)" srcSet={BASE_URL + dessert.images.tablet} />
-                  <img src={BASE_URL + dessert.images.desktop} alt={dessert.name} style={{ width: "auto" }} />
+                  <img src={BASE_URL + dessert.images.desktop} alt={dessert.name} style={{ width: "auto", borderRadius:"20px" }} />
                 </picture>
 
                 <button
@@ -100,27 +99,43 @@ function App() {
 
       <div className="cart">
         <h1 className="carttext">Your Cart ({Object.keys(cart).length})</h1>
-        <ul>
-          {Object.keys(cart).map((key) => (
-            <li key={key} className="cart-item">
-              <div className="cart-details">
-                <span>{cart[key].name} <br /> </span>
-                <span>
-                   {cart[key].quantity} x  @  ${cart[key].price}  =  ${cart[key].quantity  *  cart[key].price }
+
+        {Object.keys(cart).length === 0 ? (
+          <div className="empty-cart-message">
+            <EmptyCart />
+            <p className="message">Your added items will appear here</p>
+          </div>
+        ) : (
+          <>
+            <ul>
+              {Object.keys(cart).map((key) => (
+                <li key={key} className="cart-item">
+                  <div className="cart-details">
+                    <span className="details">{cart[key].name} <br /></span>
+                    <span className="spaced-line">
+                <span className="details1">{cart[key].quantity}x&nbsp;&nbsp;&nbsp;</span>
+                <span className="details2">@ ${cart[key].price} &nbsp;&nbsp;&nbsp;</span>
+                <span className="details3">${cart[key].quantity * cart[key].price}</span>
                 </span>
+
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div className="cart-summary">
+              <div className="cart-total">
+                <h3 className="total">Order Total:  <span className="total1">${calculateTotal()}</span></h3>
               </div>
-            </li>
-          ))}
-        </ul>
-        <div className="cart-total">
-          <h3>Order Total</h3>
-          <h3>${calculateTotal()}</h3>
-        </div>
-        <div className="carbon-neutral">
-          <span className="icon-carbon-neutral">🌿</span>
-          <p> <CarbonNeutral/>This is a <strong>carbon-neutral</strong> delivery</p>
-        </div>
-        <button className="confirm-order">Confirm Order</button>
+              <div className="carbon-neutral">
+                <p className="carbonneutral">
+                  <CarbonNeutral /> This is a <strong>carbon-neutral</strong> delivery
+                </p>
+              </div>
+              <button className="confirm-order">Confirm Order</button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );

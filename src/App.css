@@ -14,7 +14,7 @@
 
 @media only screen and (min-width: 1200px) {
   body {
-    background-color: blue;
+    background-color: #f5edeb;
   }
 }
 .addtocart {
@@ -58,6 +58,7 @@
   font-size: 30px;
   margin-left: 25px;
   padding-top: 25px;
+  color: #cf481e;
 }
 .category {
   margin-bottom: 0px;
@@ -117,4 +118,68 @@
   border-radius: 40px;
   width: 400px;
   height: 450px;
+}
+.confirm-order {
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #c73a0f;
+}
+.confirm-order:hover {
+  background-color: #af320c;
+  transition: 0.3s;
+}
+.carbonneutral {
+  width: 300px;
+  height: 50px;
+  background-color: rgb(197, 197, 197);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: black;
+}
+.picture {
+  border-radius: 30px;
+}
+.message {
+  color: rgb(95, 94, 94);
+}
+.details {
+  color: black;
+}
+.details3 {
+  color: rgb(49, 49, 49);
+}
+.details2 {
+  color: rgb(143, 143, 143);
+}
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.details1,
+.details2,
+.details3 {
+  flex: 1;
+  text-align: left;
+}
+.total {
+  color: #3b3b3b;
+}
+.total1 {
+  color: black;
+}
+.category{
+  color: gray;
+}
+.price{
+  color: #af320c;
+}
+.button{
+  
+  
 }
