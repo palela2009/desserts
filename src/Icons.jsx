@@ -121,6 +121,7 @@ export const AddToCart = () => {
         height="128"
         fill="none"
         viewBox="0 0 128 128"
+        className="emptycart"
       >
         <path
           fill="#260F08"

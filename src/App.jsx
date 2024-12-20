@@ -1,8 +1,8 @@
-import { AddToCart, DecrementQuantity, IncrementQuantity, CarbonNeutral, EmptyCart } from "./Icons";
+import { AddToCart, DecrementQuantity, IncrementQuantity, CarbonNeutral, EmptyCart , RemoveItem } from "./Icons";
 import "./App.css";
 import React, { useState } from "react";
 import dessertProducts from "./data.json";
-
+import PortalExample from './PortalExample';
 const BASE_URL = "https://res.cloudinary.com/dc2c49xov/desserts/";
 
 function App() {
@@ -48,11 +48,18 @@ function App() {
     }
     return Math.round(total * 100) / 100;
   };
+  const removeFromCart = (dessert) => {
+    const updatedCart = { ...cart };
+    delete updatedCart[dessert.name];
+    setCart(updatedCart);
+  };
+  
 
   return (
     <>
-      <div>
+      <div className="all">
         <h1>Desserts</h1>
+        <div className="products">
         {dessertProducts.map((dessert) => {
           const quantity = cart[dessert.name]?.quantity || 0;
 
@@ -62,7 +69,7 @@ function App() {
                 <picture>
                   <source media="(max-width: 600px)" srcSet={BASE_URL + dessert.images.mobile} />
                   <source media="(min-width: 600px) and (max-width: 1199px)" srcSet={BASE_URL + dessert.images.tablet} />
-                  <img src={BASE_URL + dessert.images.desktop} alt={dessert.name} style={{ width: "auto", borderRadius:"20px" }} />
+                  <img src={BASE_URL + dessert.images.desktop} alt={dessert.name} style={{ width: "100%", borderRadius:"20px"  }} />
                 </picture>
 
                 <button
@@ -116,6 +123,7 @@ function App() {
                 <span className="details1">{cart[key].quantity}x&nbsp;&nbsp;&nbsp;</span>
                 <span className="details2">@ ${cart[key].price} &nbsp;&nbsp;&nbsp;</span>
                 <span className="details3">${cart[key].quantity * cart[key].price}</span>
+                <button className="remove" onClick={() => removeFromCart(cart[key])}><RemoveItem/></button>
                 </span>
 
                   </div>
@@ -134,8 +142,13 @@ function App() {
               </div>
               <button className="confirm-order">Confirm Order</button>
             </div>
+            <div className="clipping-container">
+        <PortalExample />
+      </div>
           </>
         )}
+      </div>
+
       </div>
     </>
   );
