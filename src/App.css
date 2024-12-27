@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
 @media only screen and (max-width: 600px) {
-v
-  .all{
-  flex-direction: column;  
+  .all {
+    flex-direction: column;
+  }
+  .cart{
+    width: 100%;
   }
 }
 
@@ -11,20 +13,26 @@ v
   body {
     background-color: #f5edeb;
   }
-  .all{
+  .all {
     flex-direction: column;
   }
-  
-  
+  .cart{
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
   body {
     background-color: #f5edeb;
   }
-  .all{
-    flex-direction: row;  
-    }
+  .all {
+    flex-direction: row;
+  }
+  .cart{
+    width:  auto;}
+}
+body{
+  font-family: "Red Hat Text" ;
 }
 .addtocart {
   border-radius: 10px;
@@ -35,7 +43,7 @@ v
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width:65%;
+  width: 65%;
   height: 50px;
 }
 .addtocartorange {
@@ -47,20 +55,20 @@ v
   align-items: center;
   justify-content: center;
   background-color: #c73a0f;
-  width:65%;
+  width: 65%;
   height: 50px;
   gap: 35px;
-
 }
 .addtocarttext {
   color: #260f08;
   font-size: 15px;
 }
 .cart {
-   width: 91%; 
+  /* width: 91%; */
   background-color: white;
   color: #c73b0f;
   border-radius: 0px;
+  flex-grow: 1;
 }
 .carttext {
   font-size: 30px;
@@ -72,10 +80,8 @@ v
   margin-bottom: 0px;
   font-size: 20px;
   margin-top: 0px;
-  
 }
 .name {
-  
   font-size: 30px;
   margin-top: 10px;
 }
@@ -99,7 +105,7 @@ v
   .addtocarttext {
     color: #c73a0f;
   }
-  .bro {
+  .AddToCart {
     fill: #c73b0f;
     stroke: #c73b0f;
   }
@@ -113,18 +119,18 @@ v
 .increase:hover {
   background-color: white;
   transition: 0.3s;
-  .bro1,
-  .bro2 {
+  .DecrementQuantity,
+  .IncrementQuantity {
     fill: #c73a0f;
     stroke: #c73a0f;
   }
 }
-.bro {
+.AddToCart {
   fill: rgba(0, 0, 0, 0.459);
   stroke: rgba(0, 0, 0, 0.596);
 }
-.bro1,
-.bro2 {
+.DecrementQuantity,
+.IncrementQuantity {
   fill: white;
   stroke: white;
 }
@@ -133,8 +139,6 @@ v
   /* width: 400px; */
   margin-top: 60px;
   margin-right: 10px;
-  
-  
 }
 .confirm-order {
   width: 200px;
@@ -203,6 +207,8 @@ v
 .products {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
   flex-direction: column;
   gap: 30px;
 }
@@ -223,30 +229,33 @@ v
   width: 30px;
   border-radius: 50%;
   border: 1px solid red;
-  margin-left: 100px;
+  margin-left: 10px;
+  margin-right: 5px
 }
 
 .all {
   display: flex;
   align-items: start;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .products {
   flex-grow: 1;
 }
-
-.pr {
-  max-width: 250px;
-
-}
-
 .new {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  flex-grow: 1;
   width: 100%;
   flex-wrap: wrap;
   gap: 15px;
 }
-.h1{
+.h1 {
   margin-bottom: 0px;
+}
+.spaced-line{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
