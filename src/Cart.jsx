@@ -1,5 +1,7 @@
 import React from "react";
 import { EmptyCart, RemoveItem, CarbonNeutral } from "./Icons";
+import PortalExample from "./PortalExample";
+
 
 function Cart({ cart, removeFromCart, calculateTotal }) {
   return (
@@ -55,7 +57,7 @@ function Cart({ cart, removeFromCart, calculateTotal }) {
                 delivery
               </p>
             </div>
-            <button className="confirm-order">Confirm Order</button>
+             <PortalExample />
           </div>
         </>
       )}

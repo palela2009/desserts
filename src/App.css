@@ -4,7 +4,7 @@
   .all {
     flex-direction: column;
   }
-  .cart{
+  .cart {
     width: 100%;
   }
 }
@@ -16,7 +16,7 @@
   .all {
     flex-direction: column;
   }
-  .cart{
+  .cart {
     width: 60%;
   }
 }
@@ -28,11 +28,12 @@
   .all {
     flex-direction: row;
   }
-  .cart{
-    width:  auto;}
+  .cart {
+    width: auto;
+  }
 }
-body{
-  font-family: "Red Hat Text" ;
+body {
+  font-family: "Red Hat Text";
 }
 .addtocart {
   border-radius: 10px;
@@ -141,11 +142,13 @@ body{
   margin-right: 10px;
 }
 .confirm-order {
-  width: 200px;
+  width: 90%;
   height: 50px;
   border-radius: 30px;
   background-color: #c73a0f;
   margin-left: 20px;
+  font-family: "Red Hat Text";
+  font-size: 20px;
 }
 .confirm-order:hover {
   background-color: #af320c;
@@ -230,7 +233,7 @@ body{
   border-radius: 50%;
   border: 1px solid red;
   margin-left: 10px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .all {
@@ -254,8 +257,60 @@ body{
 .h1 {
   margin-bottom: 0px;
 }
-.spaced-line{
+.spaced-line {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+.modal {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  inset: 0;
+  margin: 0 auto;
+  transform: translateY(50%);
+  border-radius: 5%;
+}
+.orderconfirmed {
+  font-weight: 800;
+  font-size: 40px;
+}
+.orderconfired1 {
+  font-weight: 100;
+  font-size: 20px;
+}
+.orderconfirmed3 {
+  width: 90%;
+  height: 10%;
+  color: white;
+  background-color: #af320c;
+  border-radius: 40px;
+  transform: translate(20px, 300px);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  inset: 0;
+  margin: 0 auto;
+  transform: translateY(50%);
+  z-index: 1000;
+}
+.orderconfirmed4{
+  font-size: 30px;
+  font-family: "Red Hat Text";
+
+
 }

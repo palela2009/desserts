@@ -6,8 +6,9 @@ import dessertProducts from "./data.json";
 
 function App() {
   const [cart, setCart] = useState({});
-
-  const addToCart = (dessert) => {
+// use state შევქმენი 
+  const addToCart = (dessert) => {  // ეს ხდება ანუ როცა დავაჭერთ ანუ პროდუქტის ღილაკს ანუ ერთით იზრდება იმ კონკრეტულ პროდუქტს ერთით ზრდის 
+    
     setCart((prevCart) => ({
       ...prevCart,
       [dessert.name]: {
@@ -16,7 +17,7 @@ function App() {
       },
     }));
   };
-
+  
   const decrementQuantity = (dessert) => {
     const updatedCart = { ...cart };
     if (updatedCart[dessert.name]?.quantity > 1) {
