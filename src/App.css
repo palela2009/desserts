@@ -286,7 +286,9 @@ body {
   color: white;
   background-color: #af320c;
   border-radius: 40px;
-  transform: translate(20px, 300px);
+  transform: translate(10px,20px);
+  display: flex;
+  justify-content: center;
 }
 .modal-overlay {
   position: fixed;
@@ -300,8 +302,10 @@ body {
 
 .modal {
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 30%;
+  height: 50%;
+  flex-direction: column;
+  display: flex;
   background-color: white;
   inset: 0;
   margin: 0 auto;
@@ -313,4 +317,25 @@ body {
   font-family: "Red Hat Text";
 
 
+}
+.item-thumbnail{
+  width: 10%;
+  height: 10%;
+  transform: translateY(0px);
+  border-radius: 10px;
+}
+.item{
+  width: 600%;
+  height: 60%;
+  
+}
+.item-details{
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+.item1{
+  display: flex;
+  transform: translate(400px,-35px);
+  font-size: 30px;
 }

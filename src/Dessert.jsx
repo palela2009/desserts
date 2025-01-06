@@ -7,7 +7,8 @@ function Dessert({ products, cart, addToCart, decrementQuantity, incrementQuanti
   return (
     <div className="products">
       <h1 className="h1">Desserts</h1>
-      <div className="new">
+      <div className="new"> {//ანუ აქ მაპიტ დავწერე რომ ყველა პროდუქტი შემომეტანა
+      }
         {products.map((dessert) => {
           const quantity = cart[dessert.name]?.quantity || 0;
 
@@ -28,7 +29,9 @@ function Dessert({ products, cart, addToCart, decrementQuantity, incrementQuanti
                     alt={dessert.name}
                     style={{ width: "100%", borderRadius: "20px" }}
                   />
-                </picture>
+                </picture> {
+                  // აქ ფოტოებია შერცეული სიგრძის სახით
+                }
                 <button
                   className={
                     quantity === 0 ? "addtocart" : "addtocartorange"
@@ -40,6 +43,8 @@ function Dessert({ products, cart, addToCart, decrementQuantity, incrementQuanti
                       <AddToCart />
                       <h5 className="addtocarttext">Add to Cart</h5>
                     </>
+                    
+                  
                   ) : (
                     <>
                       <button
@@ -57,16 +62,22 @@ function Dessert({ products, cart, addToCart, decrementQuantity, incrementQuanti
                       </button>
                     </>
                   )}
+                  {// ესენი იყო გამოკლების დამატების ფუნქციები რაც APP.JSX ვთქვი. როცა დააჭერ კონკრეტული ფუნქციები გამოიძახება
+                  }
                 </button>
               </div>
-              <div>
+              <div>  
                 <h2 className="category">{dessert.category}</h2>
                 <h1 className="name">{dessert.name}</h1>
                 <h2 className="price">${dessert.price}</h2>
               </div>
             </div>
+            
           );
         })}
+        {//ანუ აქ გამოდის რა ღირს რა კატეგორიაა და სახელი
+}
+
       </div>
     </div>
   );

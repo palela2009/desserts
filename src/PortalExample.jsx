@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from './ModalContent.jsx';
+import dessert from "./data.json";
+const BASE_URL = "https://res.cloudinary.com/dc2c49xov/desserts/";
 
 export default function PortalExample({ cart }) {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +14,9 @@ export default function PortalExample({ cart }) {
       document.body.style.overflow = 'auto';
     }
 
-    
+    {
+      // პორტალს ვიყენებთ როცა ვაჭერთ CONFIRM ORDER ს .USEEFFECT კი იმისთვისაა რომ ასქროლვა დაბლოკოს 
+    }
     return () => {
       document.body.style.overflow = 'auto';
     };
@@ -34,6 +38,9 @@ export default function PortalExample({ cart }) {
           </>,
           document.body
         )}
+        {
+          //ეხლა კი MODALCONTENT ზე გადავიდეთ
+        }
     </>
   );
 }

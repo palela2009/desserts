@@ -2,11 +2,13 @@ import React from "react";
 import { EmptyCart, RemoveItem, CarbonNeutral } from "./Icons";
 import PortalExample from "./PortalExample";
 
-
 function Cart({ cart, removeFromCart, calculateTotal }) {
   return (
     <div className="cart">
       <h1 className="carttext">Your Cart ({Object.keys(cart).length})</h1>
+      {
+        //აქ იწერება რამდენი ცალია ქართში, თუ 0 ია რაოდენობა პროდუქტების  მაშინ სხვა ფუნქცია გამოიძახება, როცა 0 ზე მეტია კი პროდუქტების წერია რამდენია, ანუ რამდენი გამოდის რაოდენოსი შესაბამისად
+      }
       {Object.keys(cart).length === 0 ? (
         <div className="empty-cart-message">
           <EmptyCart />
@@ -44,7 +46,9 @@ function Cart({ cart, removeFromCart, calculateTotal }) {
               </li>
             ))}
           </ul>
-
+          {
+            // ფუნქცია გამოძახებული რომელიც მთლიან თანხას თვლის და მერე კი PORTALEXAMPLE ფუნცია არის გამოძახებული რომელზეც თუ გადახვალთ აღწერილია.
+          }
           <div className="cart-summary">
             <div className="cart-total">
               <h3 className="total">
@@ -57,7 +61,7 @@ function Cart({ cart, removeFromCart, calculateTotal }) {
                 delivery
               </p>
             </div>
-             <PortalExample />
+            <PortalExample cart={cart} />
           </div>
         </>
       )}

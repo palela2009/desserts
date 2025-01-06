@@ -7,7 +7,7 @@ import dessertProducts from "./data.json";
 function App() {
   const [cart, setCart] = useState({});
 // use state შევქმენი 
-  const addToCart = (dessert) => {  // ეს ხდება ანუ როცა დავაჭერთ ანუ პროდუქტის ღილაკს ანუ ერთით იზრდება იმ კონკრეტულ პროდუქტს ერთით ზრდის 
+  const addToCart = (dessert) => {  // თავიდან ამატებს ერთ ცალ პროდუქტს
     
     setCart((prevCart) => ({
       ...prevCart,
@@ -18,7 +18,7 @@ function App() {
     }));
   };
   
-  const decrementQuantity = (dessert) => {
+  const decrementQuantity = (dessert) => { // ეს ხდება ანუ როცა დავაჭერთ გამოკლების ღილაკს  ანუ პროდუქტის ღილაკი ერთით მციდება . იმ კონკრეტულ პროდუქტს ერთით ამცირებს. 
     const updatedCart = { ...cart };
     if (updatedCart[dessert.name]?.quantity > 1) {
       updatedCart[dessert.name].quantity -= 1;
@@ -28,7 +28,7 @@ function App() {
     setCart(updatedCart);
   };
 
-  const incrementQuantity = (dessert) => {
+  const incrementQuantity = (dessert) => { // ეს ხდება ანუ როცა დავაჭერთ დამატების ღილაკს  ანუ პროდუქტის ღილაკი  ერთით იზრდება. იმ კონკრეტულ პროდუქტს ერთით ზრდის.
     setCart((prevCart) => ({
       ...prevCart,
       [dessert.name]: {
@@ -38,13 +38,13 @@ function App() {
     }));
   };
 
-  const removeFromCart = (dessert) => {
+  const removeFromCart = (dessert) => { // ეს მთლიანად პროდუქტს შლის
     const updatedCart = { ...cart };
     delete updatedCart[dessert.name];
     setCart(updatedCart);
   };
 
-  const calculateTotal = () => {
+  const calculateTotal = () => { // ემატება ყველაფერი და მთლიან თანხას ითვლის
     return Object.keys(cart).reduce((total, key) => {
       const item = cart[key];
       return total + item.quantity * item.price;
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className="all">
-      <Dessert
+      <Dessert // ეს ფუნქციებია  გამოძახებული და ეხლა ამ ორ ფუნქციას გავარჩევ
         products={dessertProducts}
         cart={cart}
         addToCart={addToCart}
