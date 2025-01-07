@@ -286,9 +286,10 @@ body {
   color: white;
   background-color: #af320c;
   border-radius: 40px;
-  transform: translate(10px,20px);
+  transform: translate(10px, 20px);
   display: flex;
   justify-content: center;
+
 }
 .modal-overlay {
   position: fixed;
@@ -312,30 +313,35 @@ body {
   transform: translateY(50%);
   z-index: 1000;
 }
-.orderconfirmed4{
+.orderconfirmed4 {
   font-size: 30px;
   font-family: "Red Hat Text";
-
-
+  
 }
-.item-thumbnail{
+.item-thumbnail {
   width: 10%;
   height: 10%;
   transform: translateY(0px);
   border-radius: 10px;
 }
-.item{
-  width: 600%;
+.item {
+  width: 50%;
   height: 60%;
-  
 }
-.item-details{
+.item-details {
   width: 100%;
   height: 10%;
   display: flex;
 }
-.item1{
+.item1 {
   display: flex;
-  transform: translate(400px,-35px);
+  transform: translate(400px, -35px);
   font-size: 30px;
+}
+.order-summary {
+  overflow-y: auto;
+}
+.orderconfirmed5 {
+  width: 50px;
+  height: 50px;
 }
