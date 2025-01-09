@@ -264,12 +264,11 @@ body {
 }
 .modal {
   position: fixed;
-  width: 500px;
+  max-width: 700px;
   height: 500px;
   background-color: white;
   inset: 0;
   margin: 0 auto;
-  transform: translateY(50%);
   border-radius: 5%;
 }
 .orderconfirmed {
@@ -282,13 +281,14 @@ body {
 }
 .orderconfirmed3 {
   width: 90%;
-  height: 10%;
+  height: 8%;
   color: white;
   background-color: #af320c;
   border-radius: 40px;
-  transform: translate(10px, 20px);
-  display: flex;
+  transform: translate(10px, 0px);
   justify-content: center;
+  font-size: 30px;
+  font-family: "Red Hat Text";
 
 }
 .modal-overlay {
@@ -304,19 +304,14 @@ body {
 .modal {
   position: fixed;
   width: 30%;
-  height: 50%;
+  height: 70%;
   flex-direction: column;
   display: flex;
   background-color: white;
   inset: 0;
   margin: 0 auto;
-  transform: translateY(50%);
+  transform: translateY(20%);
   z-index: 1000;
-}
-.orderconfirmed4 {
-  font-size: 30px;
-  font-family: "Red Hat Text";
-  
 }
 .item-thumbnail {
   width: 10%;
@@ -324,7 +319,7 @@ body {
   transform: translateY(0px);
   border-radius: 10px;
 }
-.item {
+.order-confirmed7 {
   width: 50%;
   height: 60%;
 }
@@ -342,6 +337,45 @@ body {
   overflow-y: auto;
 }
 .orderconfirmed5 {
-  width: 50px;
-  height: 50px;
+  max-width: 100px;
+  min-height: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .order-confirmed7-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-confirmed7-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .orderconfirmed {
+    font-size: 24px;
+  }
+
+  .orderconfirmed1 {
+    font-size: 16px;
+  }
+
+  .order-confirmed7-thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+}
+.order-total{
+  font-size: 30px;
+  font-family: "Red Hat Text";
+}
+.order-confirmed6{
+  font-size: 30px;
+  font-family:sans-serif
 }
