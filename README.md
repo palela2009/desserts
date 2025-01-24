@@ -1,8 +1,11 @@
-# React + Vite
+# Desserts page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Product list with cart](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d) challenge by Frontendmentor
 
-Currently, two official plugins are available:
+### Users are able to
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add items to the cart and remove them
+- Increase/decrease the number of items in the cart
+- Reset their selections when they click "Start New Order"
+- Navigate the whole project and perform all actions using only their keyboard
+- View the optimal layout for the interface depending on their device's sc
