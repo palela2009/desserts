@@ -87,7 +87,7 @@ body {
   margin-top: 10px;
 }
 .decrease {
-  border-radius: 70%;
+  border-radius: 100%;
   background-color: #c73b0f;
   width: 50px;
   height: 30px;
@@ -369,6 +369,9 @@ body {
   .order-confirmed7-thumbnail {
     width: 70px;
     height: 70px;
+  }
+  .decrease{
+    width: 100px;
   }
 }
 .order-total{
