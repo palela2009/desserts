@@ -58,7 +58,7 @@ body {
   background-color: #c73a0f;
   width: 65%;
   height: 50px;
-  gap: 28px;
+  gap: 26px;
 }
 .addtocarttext {
   color: #260f08;
@@ -289,7 +289,6 @@ body {
   justify-content: center;
   font-size: 30px;
   font-family: "Red Hat Text";
-
 }
 .modal-overlay {
   position: fixed;
@@ -370,13 +369,12 @@ body {
     width: 70px;
     height: 70px;
   }
-  
 }
-.order-total{
+.order-total {
   font-size: 30px;
   font-family: "Red Hat Text";
 }
-.order-confirmed6{
+.order-confirmed6 {
   font-size: 30px;
-  font-family:sans-serif
+  font-family: sans-serif;
 }
