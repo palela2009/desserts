@@ -48,13 +48,12 @@ body {
   height: 50px;
 }
 .addtocartorange {
-  border-radius: 10px;
   transform: translate(0%, -50%);
   margin: 0 auto;
   border-radius: 50px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+  justify-content:center;
   background-color: #c73a0f;
   width: 65%;
   height: 50px;
@@ -89,11 +88,11 @@ body {
 .decrease {
   border-radius: 100%;
   background-color: #c73b0f;
-  width: 50px;
+  width: 20%;
   height: 30px;
 }
 .increase {
-  width: 50px;
+  width: 20%;
   height: 30px;
   border-radius: 70%;
   background-color: #c73b0f;
